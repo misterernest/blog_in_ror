@@ -28,7 +28,7 @@ Things you may want to cover:
 
 ### MODEL -> VIEW -> CONTROLLER
 
-![MODEL - VIEW - CONTROLLER](mvc-sequences.gif)
+![MODEL - VIEW - CONTROLLER](https://github.com/misterernest/blog_in_ror/blob/master/mvc-sequence.gif)
 
 ## Modelo
 
