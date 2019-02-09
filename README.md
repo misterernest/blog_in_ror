@@ -1,4 +1,4 @@
-# README
+# RUBY ON RAILS (RoR)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -23,6 +23,12 @@ Things you may want to cover:
 
 * ...
 
+## PATRON MODELO, VISTA Y CONTROLADOR.
+### MVC
+
+### MODEL -> VIEW -> CONTROLLER
+
+![MODEL - VIEW - CONTROLLER](/app/assests/mvc-sequences.gif)
 
 ## Modelo
 
