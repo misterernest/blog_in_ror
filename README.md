@@ -28,7 +28,7 @@ Things you may want to cover:
 
 ### MODEL -> VIEW -> CONTROLLER
 
-![MODEL - VIEW - CONTROLLER](/app/assests/mvc-sequences.gif)
+![MODEL - VIEW - CONTROLLER](mvc-sequences.gif)
 
 ## Modelo
 
