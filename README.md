@@ -35,6 +35,16 @@ Things you may want to cover:
 ***CONTROLLER: La logica de negocio***
  ***ROUTES: Direcciona al navegador hacia donde dirigirse, según la solicitud del navegador o de una vista***
 
+## Scaffold
+
+`rails g scaffold tasks task:string`
+
+Es el comando que nos permite crear el modelo, la vista y el controlador en un solo paso, con metodos REST definidos, en un solo paso.
+
+*NOTA: Recuerda que siempre que crees un Modelo, una migración o un Scaffold, deberás actualizar tu esquema corriendo el comando:*
+
+`rake db:migrate`
+
 ## Modelo
 
 Al generar un modelo invocamos directamente a la base de datos.
@@ -86,6 +96,63 @@ Para probar nuestras migraciones a traves de la consola con Active Record:
 ### Active Record
 
 Es un lenguaje de ruby, para poder hacer consultas mas sencillo que con SQL. Puede editar, crear o eliminar recuros.
+
+### SEEDS
+
+El archivo seed, nos sirve para sembrar datos dentro de nuestra base de datos.
+
+Es un pequeño bloque de array
+
+```
+# ruby encoding: utf-8
+article_list = [
+  [ "¿Cómo hacer videojuegos?", "Seguramente ya has escuchado que la industria de los videojuegos tuvo el doble de ganancias que Hollywood en 2017. La industria de los videojuegos viene pisándole los talones a la gran pantalla desde desde el 2013, y podrías creer entonces que crear tu propia empresa de videojuegos es el futuro, pero la realidad es que hacer un videojuego no es fácil.", 1 ],
+  [ "Cuatro formas de implementar tecnología en tu empresa", "La tecnología es una gran aliada de la comunicación en el proceso de Transformación Digital. Tanto para la comunicación interna como externa, puedes elegir una herramienta que responda a las necesidades que tiene tu equipo y centralizar la información y comunicación en ella.", 1 ],
+  [ "Cómo automatizar y optimizar tu trabajo en NodeJS y Grunt", "No basta con seguir los pasos de esta guía: te invito a probar, evaluar y jugar con las posibilidades. Tu mejor escuela es la práctica. Con el tiempo verás que tienes en tus manos una gran herramienta.", 1 ],
+  [ "Tres tips infalibles para aprender inglés online", "Durante muchos años he escuchado que aprender un idioma es una de las metas para iniciar un nuevo año, y el idioma más destacado de todos es el inglés. Pero, ¿cómo aprenderlo de la forma más efectiva y sobre todo que sea flexible? A lo largo de estos años he encontrado que un gran porcentaje de las personas que lo aprendieron, buscaron un método online ????.", 1 ]
+]
+```
+Que se itera, con un codigo así:
+
+```
+article_list.each do |title, body, user_id|
+  Article.create( title: title, body: body, user_id: user_id )
+end
+```
+
+Gracias al poder de ActiveRecord se crean registros dentro de la base de datos, con `title`, `body` y `user_id`.
+
+y con el comando:
+
+```
+rails db:seed
+```
+Se crean los seed dentro de la base de datos.
+
+*Las SEED funcionan para tener datos dentro de la base de datos y así poder realizar las pruebas correspondiente.*
+
+Siempre puedes consultar datos dentro de la consola `rails c`
+
+con el comando `nombre_modelo.all` algo así como: `Article.all`, para visualizar todos los recuros que tienes en la tabla articulos.
+
+Otro comandos desde `rails c` (con la tabla article), son:
+
+El primer registro de la tabla article
+```
+Article.first
+```
+el ultimo elemento de la tabla article
+```
+Article.last
+```
+El elemento de article con id 3
+```
+Article.find(3)
+```
+trae el article con titulo (`title`) '¿Cómo hacer videojuegos?'
+```
+Article.where(title: ‘¿Cómo hacer videojuegos?’).first
+```
 
 
 ## CONTROLLER
