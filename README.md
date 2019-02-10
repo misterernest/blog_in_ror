@@ -157,7 +157,7 @@ Article.where(title: ‘¿Cómo hacer videojuegos?’).first
 
 ## CONTROLLER
 
-Para crear un controlador llamado `pages` (en minuscula y en plural) con dos metodos: `index` y `contact`, los metodos pueden venir siendo las vistas para este recuro, `pages`
+Para crear un controlador llamado `pages` (en minuscula y en plural) con dos metodos: `index` y `contact`, los metodos se convierten en las vistas para este recurso, `pages`, ademas de la rutas de cada vista.
 
 Es el siguiente comando:
 ```
